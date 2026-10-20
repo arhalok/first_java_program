@@ -5,13 +5,25 @@ Student MVP based on the project SRS. Intended for JDK 21, VS Code, and MySQL. I
 ## First: verify MySQL login
 You already reached the MySQL prompt and selected `solar_maintenance`. In MySQL, run `SHOW TABLES;`. If it returns `Empty set`, this app will create the tables when launched.
 
+## Running in GitHub Codespaces / Linux
+
+Because Codespaces is a headless Linux environment, a virtual display and web viewer (noVNC) are configured to let you see and interact with the Java Swing GUI directly in your browser:
+
+1. Run the launcher script:
+   ```bash
+   ./start_gui.sh
+   ```
+2. In VS Code, go to the **Ports** tab (bottom panel next to Terminal).
+3. Find port **6080** and click the globe icon (**Open in Browser**) or open the forwarded address.
+4. You will see the **Solar Equipment Maintenance Tracker** graphical interface running live.
+
 ## Configure database credentials
 The app defaults to:
 - URL: `jdbc:mysql://localhost:3306/solar_maintenance?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true`
 - User: `root`
 - Password: empty
 
-Because your MySQL root account has a password, set the `SOLAR_DB_PASSWORD` environment variable before starting the app. In Windows CMD, for the current window only:
+Because your MySQL root account has a password on Windows, set the `SOLAR_DB_PASSWORD` environment variable before starting the app. In Windows CMD:
 
 ```bat
 set SOLAR_DB_USER=root
